@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdtaa78d2s6fk"]
+
+[ext_resource type="Texture2D" uid="uid://c3hwsm5ugp8qw" path="res://lessons/chest/bottom.png" id="1_8wo1w"]
+[ext_resource type="Shader" path="res://lessons/chest/group_outline.gdshader" id="1_svbgm"]
+[ext_resource type="Texture2D" uid="uid://bnem1cahhoxdk" path="res://lessons/chest/top.png" id="2_ijklp"]
+[ext_resource type="Texture2D" uid="uid://bu2jin246nel5" path="res://lessons/chest/lock.png" id="3_4q1ks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1vpn"]
+size = Vector2(98, 79)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbunt"]
+shader = ExtResource("1_svbgm")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 15.0
+shader_parameter/viewport_scale = Vector2(1, 1)
+
+[node name="Chest" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, -27.5)
+shape = SubResource("RectangleShape2D_w1vpn")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+material = SubResource("ShaderMaterial_jbunt")
+
+[node name="Bottom" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(-1, -23)
+texture = ExtResource("1_8wo1w")
+
+[node name="Top" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(-1, -36)
+texture = ExtResource("2_ijklp")
+
+[node name="Lock" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(0, -12)
+texture = ExtResource("3_4q1ks")
