@@ -30,6 +30,8 @@ func _input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event_is_mouse_click:
 		open()
 
+
+
 func open() -> void:
 	input_pickable = false
 	
@@ -66,3 +68,4 @@ func _spawn_random_item() -> void:
 	tween.tween_property(loot_item, "position:y", land_position.y - jump_height, HALF_FLIGHT_TIME)
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(loot_item, "position:y", land_position.y, HALF_FLIGHT_TIME)
+
